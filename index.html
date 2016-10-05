@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <base href="/">
+        <title>Traveller App</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Bootstrap latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="app/resources/css/custom.css">
+        <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+        <!-- 1. Load libraries -->
+        <!-- Polyfill(s) for older browsers -->
+        <script src="node_modules/core-js/client/shim.min.js"></script>
+        <script src="node_modules/zone.js/dist/zone.js"></script>
+        <script src="node_modules/reflect-metadata/Reflect.js"></script>
+        <script src="node_modules/systemjs/dist/system.src.js"></script>
+        <!-- 2. Configure SystemJS -->
+        <script src="systemjs.config.js"></script>
+
+  </head>
+  <!-- 3. Display the application -->
+  <body>
+      <div class="container">
+          <div class="row">
+              <traveller-app>Loading...</traveller-app>
+          </div>
+      </div>
+
+      <!-- Jquery -->
+      <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+      <!-- Bootstrap latest compiled and minified JavaScript -->
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+      <script src="node_modules/ng2-bootstrap/bundles/ng2-bootstrap.min.js"></script>
+      <script>
+      /*System.config({
+          packages: {
+              app: {
+                  format: 'register',
+                  defaultExtension: 'js'
+              }
+          },
+          map: {
+              moment: 'node_modules/moment/moment.js'
+          }
+      });*/
+      </script>
+      <script>
+      System.import('app').catch(function(err){ console.error(err); });
+      </script>
+  </body>
+</html>

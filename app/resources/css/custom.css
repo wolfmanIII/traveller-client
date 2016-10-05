@@ -1,0 +1,7 @@
+
+/**
+ * Dropdown menu on hover
+ **/
+ul.nav li.dropdown:hover > ul.dropdown-menu {
+    display: block;
+}
