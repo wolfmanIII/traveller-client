@@ -95,6 +95,10 @@
                 <h4 class="modal-title">Size</h4>
             </div>
             <div class="modal-body">
+                <div *ngIf="(errorMessage != '')">
+                    <alert type="info">{{errorMessage}}</alert>
+                </div>
+
                 <form>
                     <div class="form-group">
                         <label for="size">Size</label>

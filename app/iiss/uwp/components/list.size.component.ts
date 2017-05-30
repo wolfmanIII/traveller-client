@@ -24,6 +24,7 @@ export class ListSizeComponent implements OnInit {
     private message:string = "Loading...";
     private allChecked = false;
     private progressBar = 0;
+    private errorMessage:string = '';
 
     /**
      * Pagination
@@ -128,11 +129,17 @@ export class ListSizeComponent implements OnInit {
     save() {
         if (this.item.id) {
             this.sizeService.update(this.item)
-                .subscribe(data => {
-                    this.data = data;
-                    this.setData4Page();
-                    this.itemModal.hide();
-                });
+                .subscribe(
+                    data => {
+                        this.data = data;
+                        this.setData4Page();
+                        this.itemModal.hide();
+                    },
+                    error => {
+                        let errorData = error.json();
+                        this.errorMessage = errorData['violations'][0].message;
+                        //console.log(this.item.id);
+                    });
         } else {
             this.sizeService.create(this.item)
                 .subscribe(data => {
@@ -193,4 +200,5 @@ export class ListSizeComponent implements OnInit {
                 this.setData4Page();
             });
     }
+
 }

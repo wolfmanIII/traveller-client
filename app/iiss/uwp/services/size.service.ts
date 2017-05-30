@@ -63,7 +63,8 @@ export class SizeService {
 
     create(size: Size) {
         let url = 'http://localhost:8000/sizes'
-        return this.http.post(url, JSON.stringify(size), {headers: this.headers});
+        return this.http.
+            post(url, JSON.stringify(size), {headers: this.headers});
     }
 
     update(size: Size) {
